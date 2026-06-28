@@ -42,26 +42,29 @@ export default function Header() {
           </Link>
 
           {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden w-10 h-10 flex flex-col justify-center items-center"
-            aria-label="Toggle Menu"
-          >
-            <span
-              className={`block w-6 h-\[2px\] bg-white transition-all duration-300 ${
-                mobileMenuOpen
-                  ? "rotate-45 translate-y-\[4px\]"
-                  : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-\[2px\] bg-white mt-1 transition-all duration-300 ${
-                mobileMenuOpen
-                  ? "-rotate-45 -translate-y-\[4px\]"
-                  : ""
-              }`}
-            />
-          </button>
+        <button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  className="lg:hidden flex h-10 w-10 items-center justify-center"
+  aria-label="Toggle Menu"
+>
+  <div className="flex flex-col gap-1.5">
+    <span
+      className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+        mobileMenuOpen ? "translate-y-2 rotate-45" : ""
+      }`}
+    />
+    <span
+      className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+        mobileMenuOpen ? "opacity-0" : ""
+      }`}
+    />
+    <span
+      className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+        mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
+      }`}
+    />
+  </div>
+</button>
         </div>
       </div>
 
